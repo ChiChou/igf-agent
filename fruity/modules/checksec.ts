@@ -1,4 +1,3 @@
-import { fromBytes } from "../bridge/dictionary.js";
 import { encryptionInfo, pie } from "../lib/macho.js";
 
 export interface CheckSecFlags {

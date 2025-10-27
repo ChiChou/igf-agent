@@ -54,11 +54,12 @@ function locked() {
 async function pidOf(bundle: string): Promise<number> {
   return new Promise((resolve, reject) => {
     ObjC.schedule(ObjC.mainQueue, () => {
-      const pid = ObjC.classes.FBSSystemService.sharedService().pidForApplication_(bundle);
-      if (pid)
-        resolve(pid);
-      else
-        reject(new Error(`No process found for bundle: ${bundle}`));
+      const pid =
+        ObjC.classes.FBSSystemService.sharedService().pidForApplication_(
+          bundle,
+        );
+      if (pid) resolve(pid);
+      else reject(new Error(`No process found for bundle: ${bundle}`));
     });
   });
 }
@@ -105,5 +106,5 @@ rpc.exports = {
   frontmost,
   locked,
   open,
-  pidOf
+  pidOf,
 };
