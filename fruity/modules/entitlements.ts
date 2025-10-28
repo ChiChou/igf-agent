@@ -1,6 +1,6 @@
 import ObjC from "frida-objc-bridge";
 
-import { NSData } from "../typings";
+import { NSData } from "../typings.js";
 
 ObjC.classes.NSBundle.bundleWithPath_(
   "/System/Library/Frameworks/Security.framework",
