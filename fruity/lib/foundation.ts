@@ -3,7 +3,7 @@ import type { NSString } from "../typings.js";
 
 function wrap(name: string) {
   return function (): NSString {
-    const impl = Module.findGlobalExportByName(name)
+    const impl = Module.findExportByName(null, name)
     if (!impl) throw new Error(`${name} not found`)
 
     const func = new NativeFunction(impl, 'pointer', [])
