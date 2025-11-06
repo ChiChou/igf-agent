@@ -2,8 +2,6 @@
 
 Frida agent script for [igf](https://npmjs.org/igf).
 
-Main repository: [grapefruit](https://github.com/chichou/grapefruit)
-
 ## Build
 
 ```npm run build```

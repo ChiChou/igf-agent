@@ -11,7 +11,6 @@ import * as ui from "./modules/ui.js";
 import * as url from "./modules/url.js";
 import * as userdefaults from "./modules/userdefaults.js";
 import * as webview from "./modules/webview.js";
-import * as entitlements from "./modules/entitlements.js";
 
 import * as sqlite from "../common/sqlite.js";
 
@@ -34,5 +33,4 @@ export default {
   url,
   userdefaults,
   webview,
-  entitlements,
 };

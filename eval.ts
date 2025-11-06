@@ -20,15 +20,15 @@ import ObjC from "frida-objc-bridge";
   return hexdump(this);
 };
 
-rpc.exports.eval = function (js: string) {
+rpc.exports.eval = function (js) {
   try {
     const result = eval(js);
-    if (ObjC.available && result instanceof ObjC.Object) {
+    if (result instanceof ObjC.Object) {
       return ["string", result.toString()];
     } else if (result instanceof ArrayBuffer) {
       return result;
     } else {
-      const type = result === null ? "null" : typeof result;
+      var type = result === null ? "null" : typeof result;
       return [type, result];
     }
   } catch (e) {
