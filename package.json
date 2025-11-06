@@ -12,17 +12,22 @@
     "node:flags": "node --experimental-strip-types",
     "prepare": "npm run node:flags scripts/prepare.ts",
     "dev": "npm run node:flags scripts/watch.ts",
-    "test": "npm run node:flags -- --test tests/*.ts"
+    "test": "npm run node:flags -- --test tests/*.ts",
+    "type:flags": "tsgo --declaration --experimentalDecorators --emitDeclarationOnly --outDir types --target es2019 --skipLibCheck",
+    "types:ios": "npm run type:flags -- fruity/index.ts",
+    "types:android": "npm run type:flags -- droid/index.ts",
+    "types:springboard": "npm run type:flags -- fruity/springboard.ts",
+    "types:eval": "npm run type:flags -- eval.ts"
   },
   "devDependencies": {
-    "@types/frida-gum": "^19.0.1",
-    "@types/node": "^18.19.130",
-    "frida": "^17.4.4",
-    "frida-compile": "^19.0.4"
+    "@types/frida-gum": "^19.0.0",
+    "@types/node": "^18.14.0",
+    "@typescript/native-preview": "^7.0.0-dev.20251106.1",
+    "frida": "^17.0.7",
+    "frida-compile": "^18.0.0"
   },
   "dependencies": {
-    "frida-java-bridge": "^7.0.10",
-    "frida-objc-bridge": "^8.0.5"
+    "frida-objc-bridge": "^8.0.4"
   },
   "type": "module"
 }
